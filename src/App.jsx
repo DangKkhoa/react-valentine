@@ -28,15 +28,12 @@ const QUESTIONS = [
 
 const App = () => {
 
-  useEffect(() => {
-    
-    document.title = "Will you be my valentine ^^"
-  }, [])
+  
 
   const [count, setCount] = useState(0);
   const [curGif, setCurGif] = useState(cuteGif6);
   const [question, setQuestion] = useState(QUESTIONS[0]);
-
+  
   const [yesClicked, setYesClicked] = useState(false);
 
   console.log(curGif)
