@@ -9,6 +9,7 @@ import cuteGif6 from "./assets/6.gif"
 import cuteGif7 from "./assets/7.gif"
 import cuteGif8 from "./assets/8.gif"
 import cuteGif9 from "./assets/9.gif"
+import cuteGif10 from "./assets/10.gif"
 
 import FallenHeart from './FallenHeart'
 
@@ -20,7 +21,8 @@ const QUESTIONS = [
   "Are you sure :<",
   "Really huh??",
   "Think again, please...",
-  "If you say no, I will be really sad :("
+  "If you say no, I will be really sad :(",
+  "Ok. Goodbye..."
 ]
 
 const App = () => {
@@ -55,11 +57,11 @@ const App = () => {
     <div className='h-screen flex items-center justify-center bg-linear-to-b from-yellow-100 to-pink-300'>
       {yesClicked && <FallenHeart />}
       <div>
-        <img src={curGif} alt="" className='w-96 mb-6 mx-auto'/>
+        <img src={count < SADGIFS.length ? curGif : cuteGif10} alt="" className='w-96 mb-6 mx-auto'/>
         <h1 className='text-6xl text-center mb-6 text-purple-500 font-[Rochester] font-bold'>
-          {yesClicked ? "Yayyy. I love youuuu <3" : question}
+          {yesClicked ? "Awwww. Love you so muchhhh <3" : question}
         </h1>
-        {!yesClicked && <div className='m-auto w-fit'>
+        {(!yesClicked && count < SADGIFS.length) && <div className='m-auto w-fit'>
             <button 
               className={`px-10 py-4 rounded-lg text-gray-100 font-[Darumadrop_One] text-[${18 * (count + 1)}px] bg-green-500 mr-4`} 
               style={{fontSize: `${18 * (count + 1)}px`}}
