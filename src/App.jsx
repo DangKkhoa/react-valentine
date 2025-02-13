@@ -33,7 +33,7 @@ const App = () => {
   const [count, setCount] = useState(0);
   const [curGif, setCurGif] = useState(cuteGif6);
   const [question, setQuestion] = useState(QUESTIONS[0]);
-  
+
   const [yesClicked, setYesClicked] = useState(false);
 
   console.log(curGif)
@@ -52,7 +52,7 @@ const App = () => {
   
 
   return (
-    <div className='h-screen flex items-center justify-center bg-linear-to-b from-yellow-100 to-pink-300'>
+    <div className='h-screen overflow-hidden inset-0 flex items-center justify-center bg-linear-to-b from-yellow-100 to-pink-300 over'>
       {yesClicked && <FallenHeart />}
       <div>
         <img src={count < SADGIFS.length ? curGif : cuteGif10} alt="" className='w-96 mb-6 mx-auto'/>
