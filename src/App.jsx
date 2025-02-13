@@ -12,6 +12,7 @@ import cuteGif9 from "./assets/9.gif"
 import cuteGif10 from "./assets/10.gif"
 
 import FallenHeart from './FallenHeart'
+import { p } from 'motion/react-client'
 
 const SADGIFS = [cuteGif2, cuteGif9, cuteGif7, cuteGif3, cuteGif8]
 const HAPPYGIFS = [cuteGif1, cuteGif4, cuteGif5]
@@ -59,8 +60,10 @@ const App = () => {
       <div>
         <img src={count < SADGIFS.length ? curGif : cuteGif10} alt="" className='w-96 mb-6 mx-auto'/>
         <h1 className='text-6xl text-center mb-6 text-purple-500 font-[Rochester] font-bold'>
-          {yesClicked ? "Awwww. Love you so muchhhh <3" : question}
+          {yesClicked ? "Awwww. Love you so muchhhh 💖" : question}
+          
         </h1>
+        {yesClicked && <p className='text-3xl text-center mb-6 text-purple-500 font-[Rochester] font-bold'>Let's go on a date</p>}
         {(!yesClicked && count < SADGIFS.length) && <div className='m-auto w-fit'>
             <button 
               className={`px-10 py-4 rounded-lg text-gray-100 font-[Darumadrop_One] text-[${18 * (count + 1)}px] bg-green-500 mr-4`} 
